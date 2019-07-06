@@ -182,5 +182,35 @@
             </div>
             </footer>
         </div>
+
+
+        <script type="text/javascript">
+            // Captures user input values
+            $("#submit").on("click", function(event) {
+              event.preventDefault();
+              var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: 
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim(),
+              };
+        
+              $.post("/api/characters", newFriend)
+                .then(function(data) {
+                  console.log("add.html", data);
+                  alert("Adding new Friend...");
+                });
+            });
+        </script>        
+
     </body>
 </html>
