@@ -155,7 +155,7 @@
                     <option value="4">4 (Somewhat Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <br /><br /
+                <br /><br />
                 <h4><strong>Question 10</strong></h4>
                 <h5>You feel more energetic after spending time with a group of people.</h5>
                 <select class="chosen-select" id="q10">
@@ -178,37 +178,91 @@
             <!-- Footer links -->
             <footer class="footer">
             <div class="container">
-                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder">GitHub Repo</a></p>
+                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder">GitHub Repo</a></p> <!-- NEED TO ADD CORRECT LINK INFO HERE -->
             </div>
             </footer>
         </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="results-modal" tabindex="-1" role="dialog" aria-labelledby="bestMatchCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bestMatchLongTitle">Best Match</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="#" alt="" /> <!-- NEED TO ADD IMG SRC INFO HERE -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal -->
+
 
         <script type="text/javascript">
-            // Captures user input values
+            // CSS for user selections
+
+            // Capture user input selected values
             $("#submit").on("click", function(event) {
-              event.preventDefault();
-              var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: 
-                    $("#q1").val().trim(),
-                    $("#q2").val().trim(),
-                    $("#q3").val().trim(),
-                    $("#q4").val().trim(),
-                    $("#q5").val().trim(),
-                    $("#q6").val().trim(),
-                    $("#q7").val().trim(),
-                    $("#q8").val().trim(),
-                    $("#q9").val().trim(),
-                    $("#q10").val().trim(),
-              };
-        
-              $.post("/api/characters", newFriend)
-                .then(function(data) {
-                  console.log("add.html", data);
-                  alert("Adding new Friend...");
-                });
+                event.preventDefault();
+
+                // Validate that form and all questions have been answered
+                function validateSurvey() {
+                    var isValid = true;
+                    $(".form-control").each(function() {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+                    $(".chosen-select").each(function() {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+                    return isValid;
+                }
+                
+                // If all inputs have answers
+                if (validateSurvey()) {        
+                // Create an object with the user input data
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val().trim(),
+                        $("#q2").val().trim(),
+                        $("#q3").val().trim(),
+                        $("#q4").val().trim(),
+                        $("#q5").val().trim(),
+                        $("#q6").val().trim(),
+                        $("#q7").val().trim(),
+                        $("#q8").val().trim(),
+                        $("#q9").val().trim(),
+                        $("#q10").val().trim(),
+                    ]
+                };
+
+                // AJAX post user input data to friends api
+                $.post("/api/friends", newFriend)
+                    .then(function(data) {
+                    
+                    // Match user inputs and display best match name and photo
+                    $("#match-name").text(data.name);
+                    $("match-img").attr("src", data.photo);
+
+                    // Invoke the modal to display best match results
+                    $("#results-modal").modal("toggle");
+                    });
+                } else {
+                    alert("Please complete all the fields and try submitting again.");
+                }
             });
         </script>        
 

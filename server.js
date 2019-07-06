@@ -13,53 +13,123 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// Friends (DATA)
+// Friends (DATA) see friends.js
 // =============================================================
 var friends = [
   {
-    "routeName": "ahmed",
     "name": "Ahmed",
-    "photo": "#",
-    "scores": ["5", "1", "2", "4", "5", "2", "3", "3", "1", "1"]
+    "photo": "https://unsplash.com/photos/5OjfCQduO9E",
+    "scores": [
+        5, 
+        1, 
+        2, 
+        4, 
+        5, 
+        2, 
+        3, 
+        3, 
+        1, 
+        1
+      ]
   },
   {
-    "routeName": "jacob",
     "name": "Jacob",
-    "photo": "#",
-    "scores": ["3", "4", "5", "3", "2", "2", "3", "4", "5", "3"]
+    "photo": "#https://unsplash.com/photos/vMV6r4VRhJ8",
+    "scores": [
+        3, 
+        4, 
+        5, 
+        3, 
+        2, 
+        2, 
+        3, 
+        4, 
+        5, 
+        3
+      ]
   },
   {
-    "routeName": "jeremiah",
-    "name": "Jeremiah",
-    "photo": "#",
-    "scores": ["2", "2", "4", "1", "3", "1", "3", "4", "4", "1"]
+    "name": "Laura",
+    "photo": "https://unsplash.com/photos/WwOZfNO08_M",
+    "scores": [
+        2, 
+        2, 
+        4, 
+        1, 
+        3, 
+        1, 
+        3, 
+        4, 
+        4, 
+        1
+      ]
   },
   {
-    "routeName": "louis",
     "name": "Louis",
-    "photo": "#",
-    "scores": ["1", "5", "5", "4", "1", "3", "2", "3", "2", "2"]
+    "photo": "https://unsplash.com/photos/41Is0o6JMBk",
+    "scores": [
+        1, 
+        5, 
+        5, 
+        4, 
+        1, 
+        3, 
+        2, 
+        3, 
+        2, 
+        2
+      ]
   },
+
   {
-    "routeName": "lou",
     "name": "Lou",
-    "photo": "#",
-    "scores": ["4", "3", "2", "3", "4", "4", "5", "1", "1", "3"]
+    "photo": "https://unsplash.com/photos/_lbW_JZwUCM",
+    "scores": [
+        4, 
+        3, 
+        2, 
+        3, 
+        4, 
+        4, 
+        5, 
+        1, 
+        1, 
+        3
+      ]
   },
   {
-    "routeName": "jordan",
     "name": "Jordan",
-    "photo": "#",
-    "scores": ["3", "2", "4", "2", "2", "5", "5", "5", "4", "4"]
+    "photo": "https://unsplash.com/photos/ySTdW42Y7og",
+    "scores": [
+        3, 
+        2, 
+        4, 
+        2, 
+        2, 
+        5, 
+        5, 
+        5, 
+        4, 
+        4
+      ]
   },
   {
-    "routeName": "ben",
-    "name": "Ben",
-    "photo": "#",
-    "scores": ["2", "4", "3", "5", "3", "1", "4", "2", "5", "5"]
+    "name": "Joren",
+    "photo": "https://unsplash.com/photos/5FlYmHYLf_8",
+    "scores": [
+        2, 
+        4, 
+        3, 
+        5, 
+        3, 
+        1, 
+        4, 
+        2, 
+        5, 
+        5
+      ]
   }
 ];
-
 
 // Routes
 // =============================================================
