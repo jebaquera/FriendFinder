@@ -1,6 +1,5 @@
 # Friend Finder - Node and Express Servers
 
-- - -
 ### App Overview
 This activity required the building of a compatibility-based "FriendFinder" application (functionality is much like a dating app). This full-stack site takes in results from the survey that the user takes and submits. Based on these user inputs, the app will then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
