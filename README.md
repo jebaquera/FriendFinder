@@ -1,14 +1,18 @@
 # Friend Finder - Node and Express Servers
-### App Overview
 
+- - -
+### App Overview
 This activity required the building of a compatibility-based "FriendFinder" application (functionality is much like a dating app). This full-stack site takes in results from the survey that the user takes and submits. Based on these user inputs, the app will then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
+- - -
 ### Technical Specifications
-You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
+Express was implemented to handle routing. The app was deployed Heroku so users could complete and submit the survey.
+NPM Dependencies:
+  body-parser v1.19.0,
+  express v4.16.3
 
-
+- - -
 ### Git Hub File Organization
-
 * A repository named `FriendFinder` was created in Git Hub. The following folder structure was followed to facilitate the organization of directories:
 
   ```
@@ -31,9 +35,8 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
     - server.js
   ```
 
-
+- - -
 ### Instructions for Using the Application
-
 1. The "Friend Finder" survey includes ten questions. Each question asks the user to select their answer based on a scale of 1 to 5. The range going from "1 (Strongly  Disagree)" to "5 (Strongly Agree)" for how much the user disagrees or agrees with a question.
 
 2. The `server.js` file includes the required basic npm packages: `express` and `path`. Reference Technical Specifications section above for details and version numbers.
@@ -83,18 +86,18 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
 7. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
    * The modal should display both the name and picture of the closest match.
 
+
+- - -
 ### Reminder: Submission on BCS
 
 * Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
 
 - - -
-
 ### Minimum Requirements
 
 Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below. **This assignment must be deployed.**
 
 - - -
-
 ### Hosting on Heroku
 
 Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database.
@@ -104,7 +107,6 @@ Please see [Heroku’s Account Verification Information](https://devcenter.herok
 See the [Supplemental Heroku Deployment Guide](../../03-Supplemental/HerokuGuide.md) for in-detail deployment instructions.
 
 - - -
-
 ### Create a README.md
 
 Add a `README.md` to your repository describing the project. Here are some resources for creating your `README.md`. Here are some resources to help you along the way:
@@ -114,15 +116,12 @@ Add a `README.md` to your repository describing the project. Here are some resou
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
 - - -
-
 ### Add To Your Portfolio
 
 After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
 
 - - -
-
 ### One More Thing
 
 If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
 
-**Good Luck!**
