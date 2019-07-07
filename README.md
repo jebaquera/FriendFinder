@@ -1,21 +1,18 @@
 # Friend Finder - Node and Express Servers
+### App Overview
 
-### Overview
+This activity required the building of a compatibility-based "FriendFinder" application (functionality is much like a dating app). This full-stack site takes in results from the survey that the user takes and submits. Based on these user inputs, the app will then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
-In this activity, you'll build a compatibility-based "FriendFinder" application -- basically a dating app. This full-stack site will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
-
+### Technical Specifications
 You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
 
 
-### Before You Begin
+### Git Hub File Organization
 
-* Check out [this demo version of the site](https://friend-finder-fsf.herokuapp.com/). Use this as a model for how we expect your assignment look and operate.
-
-* Create a folder called `FriendFinder`. Inside the folder, organize your directories so it matches the following:
+* A repository named `FriendFinder` was created in Git Hub. The following folder structure was followed to facilitate the organization of directories:
 
   ```
   FriendFinder
-    - .gitignore
     - app
       - data
         - friends.js
@@ -26,32 +23,32 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
         - apiRoutes.js
         - htmlRoutes.js
     - node_modules
+    - .gitignore
+    - composer.json
+    - package-lock.json
     - package.json
+    - README.md
     - server.js
   ```
 
 
-### Submission on BCS
+### Instructions for Using the Application
 
-* Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
+1. The "Friend Finder" survey includes ten questions. Each question asks the user to select their answer based on a scale of 1 to 5. The range going from "1 (Strongly  Disagree)" to "5 (Strongly Agree)" for how much the user disagrees or agrees with a question.
 
-### Instructions
+2. The `server.js` file includes the required basic npm packages: `express` and `path`. Reference Technical Specifications section above for details and version numbers.
 
-   1. Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
+3. The `htmlRoutes.js` file inside the `routing` folder contains two routes:
 
-   2. Your `server.js` file should require the basic npm packages we've used in class: `express` and `path`.
+   * A GET Route to `/survey` that displays the survey page.
+   * A default, catch-all route that leads to `home.html` that displays the home page.
 
-3. Your `htmlRoutes.js` file should include two routes:
+4. The `apiRoutes.js` file inside the `routing` folder contains two routes:
 
-   * A GET Route to `/survey` which should display the survey page.
-   * A default, catch-all route that leads to `home.html` which displays the home page.
+   * A GET route with the url `/api/friends`. This is used to display a JSON of all possible friends.
+   * A POST routes `/api/friends`. This is used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 
-4. Your `apiRoutes.js` file should contain two routes:
-
-   * A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-   * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
-
-5. You should save your application's data inside of `app/data/friends.js` as an array of objects. Each of these objects should roughly follow the format below.
+5. The application's data is saved inside of `app/data/friends.js` as an array of objects. Each of these objects roughly follows the format below.
 
 ```json
 {
