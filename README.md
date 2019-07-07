@@ -6,9 +6,9 @@ This activity required the building of a compatibility-based "FriendFinder" appl
 - - -
 ### Technical Specifications
 Express was implemented to handle routing. The app was deployed Heroku so users could complete and submit the survey.
-NPM Dependencies:
-  body-parser v1.19.0,
-  express v4.16.3
+NPM dependencies:
+   * body-parser v1.19.0,
+   * express v4.16.3
 
 - - -
 ### Git Hub File Organization
