@@ -260,20 +260,21 @@
             var apiFriendsRoute = '/api/friends'; 
 
             if (formIsValid()) {
-                $.get(apiFriendsRoute, function(data) {
-                    var match = makeMatch(data);
-                    if (match.name !== undefined) {
-                        modalTitle.text('You have a friend match!');
-                        modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
-                    } else {
-                        modalTitle.text('We couldn\'t find a match');
-                        modalBody.text('Sorry, there are too few friends to match you with.');
-                    }
-                }).then(function() {
-                    modal.show();
+                // $.get(apiFriendsRoute, function(data) {
+                    
+                // }).then(function() {
                     // $('.form')[0].reset();
                     $.post(apiFriendsRoute, newPerson);
-                });
+                        var match = makeMatch(data);
+                        if (match.name !== undefined) {
+                            modalTitle.text('You have a friend match!');
+                            modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
+                        } else {
+                            modalTitle.text('We couldn\'t find a match');
+                            modalBody.text('Sorry, there are too few friends to match you with.');
+                        }
+                    modal.show();
+                // });
             } else {
                 modalTitle.text('Oops!');
                 modalBody.text('Please enter an answer for each of the questions before submitting.');
