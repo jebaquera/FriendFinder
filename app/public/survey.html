@@ -266,12 +266,12 @@
                         modalTitle.text('You have a friend match!');
                         modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
                     } else {
-                        modalTitle.text('We couldn\'t find a match);
+                        modalTitle.text('We couldn\'t find a match');
                         modalBody.text('Sorry, there are too few friends to match you with.');
                     }
                 }).then(function() {
                     modal.show();
-                    $('.form')[0].reset();
+                    // $('.form')[0].reset();
                     $.post(apiFriendsRoute, newPerson);
                 });
             } else {
