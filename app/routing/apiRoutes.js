@@ -11,14 +11,12 @@ module.exports = function(app){
 
     // Displays all friends
     app.get("/api/friends", function(req, res) {
-    return res.json(friends);
+        return res.json(friends);
     });
   
     // Displays a single friend, or returns false
     app.get("/api/friends/:friend", function(req, res) {
         var chosen = req.params.friend;
-  
-        console.log(chosen);
   
         for (var i = 0; i < friends.length; i++) {
             if (chosen === friends[i].routeName) {
@@ -31,19 +29,13 @@ module.exports = function(app){
   
     // Add Friends that take the survey - takes in JSON input
     app.post("/api/friends", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body parsing middleware
-    var newFriend = req.body;
+        var newPerson = req.body;
   
     // Using a RegEx Pattern to remove spaces from newCharacter
     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-  
-    console.log(newFriend);
-  
-    friends.push(newFriend);
-  
-    res.json(newFriend);
+    newPerson.routeName = newPerson.name.replace(/\s+/g, "").toLowerCase();
+        friends.push(newPerson);
+        res.json(newPerson);
     });
   
 

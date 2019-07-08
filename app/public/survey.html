@@ -50,8 +50,8 @@
                         <input type="text" class="form-control" id="name" required>
                     </div>
                     <div class="form-group">    
-                        <label for="photo"><h5><strong>Link to Photo Image</strong></h5></label>
-                        <input type="text" class="form-control" id="photo" required>
+                        <label for="image"><h5><strong>Link to Photo Image</strong></h5></label>
+                        <input type="text" class="form-control" id="image" required>
                     </div>
                     <br />
                     <div class="form-group">   
@@ -204,9 +204,9 @@
 
             <!-- Footer links -->
             <footer class="footer">
-            <div class="container">
-                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder">GitHub Repo</a></p> <!-- NEED TO ADD CORRECT LINK INFO HERE -->
-            </div>
+                <div>
+                    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder">GitHub Repo</a></p> <!-- NEED TO ADD CORRECT LINK INFO HERE -->
+                </div>
             </footer>
         </div>
 
@@ -229,14 +229,14 @@
 
         <script type="text/javascript">
         // Global variables
-        var nameVal, photoVal, q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val, newFriend;
+        var nameVal, imageVal, q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val, newPerson;
 
         // Capture user input selected values
         $("#submit").on("click", function(event) {
             event.preventDefault();
             // Set global variable values
             nameVal = $('#name').val();
-            photoVal = $('#photo').val();
+            imageVal = $('#image').val();
             q1Val = parseInt($('#q1').val());
             q2Val = parseInt($('#q2').val());
             q3Val = parseInt($('#q3').val());
@@ -247,16 +247,16 @@
             q8Val = parseInt($('#q8').val());
             q9Val = parseInt($('#q9').val());
             q10Val = parseInt($('#q10').val());
-            newFriend = {
+            newPerson = {
                 name: nameVal,
-                photo: photoVal,
-                scores: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
+                image: imageVal,
+                responses: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
                 total: q1Val + q2Val + q3Val + q4Val + q5Val + q6Val + q7Val + q8Val + q9Val + q10Val
             };
             // Set local variables
             var modalTitle = $('.modal-title');
             var modalBody = $('.modal-body');
-            var modal = $('.modal fade');
+            var modal = $('#modal');
             var apiFriendsRoute = '/api/friends'; 
 
             if (formIsValid()) {
@@ -272,7 +272,7 @@
                 }).then(function() {
                     modal.show();
                     $('.form')[0].reset();
-                    $.post(apiFriendsRoute, newFriend);
+                    $.post(apiFriendsRoute, newPerson);
                 });
             } else {
                 modalTitle.text('Oops!');
@@ -289,19 +289,19 @@
         function makeMatch(data) {
             var difference = 50;
             var minName;
-            var minPhoto;
-            data.forEach(function(friend) {
-                var localDiff = Math.abs(newFriend.total - friends.total);
+            var minImage;
+            data.forEach(function(person) {
+                var localDiff = Math.abs(newPerson.total - person.total);
                 if (localDiff < difference) {
                     difference = localDiff;
-                    minName = friend.name;
-                    minPhoto = friend.photo;
+                    minName = person.name;
+                    minPhoto = person.image;
                 }
             });
-        return {
-            name: minName,
-            photo: minPhoto
-        };
+            return {
+                name: minName,
+                photo: minImage
+            };
         }
         </script>
     </body>

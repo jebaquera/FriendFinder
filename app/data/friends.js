@@ -1,8 +1,8 @@
 var friends = [
     {
       "name": "Ahmed",
-      "photo": "https://unsplash.com/photos/5OjfCQduO9E",
-      "scores": [
+      "image": "https://unsplash.com/photos/5OjfCQduO9E",
+      "responses": [
           5, 
           1, 
           2, 
@@ -17,8 +17,8 @@ var friends = [
     },
     {
       "name": "Jacob",
-      "photo": "#https://unsplash.com/photos/vMV6r4VRhJ8",
-      "scores": [
+      "image": "#https://unsplash.com/photos/vMV6r4VRhJ8",
+      "responses": [
           3, 
           4, 
           5, 
@@ -33,8 +33,8 @@ var friends = [
     },
     {
       "name": "Laura",
-      "photo": "https://unsplash.com/photos/WwOZfNO08_M",
-      "scores": [
+      "image": "https://unsplash.com/photos/WwOZfNO08_M",
+      "responses": [
           2, 
           2, 
           4, 
@@ -49,8 +49,8 @@ var friends = [
     },
     {
       "name": "Louis",
-      "photo": "https://unsplash.com/photos/41Is0o6JMBk",
-      "scores": [
+      "image": "https://unsplash.com/photos/41Is0o6JMBk",
+      "responses": [
           1, 
           5, 
           5, 
@@ -66,8 +66,8 @@ var friends = [
 
     {
       "name": "Lou",
-      "photo": "https://unsplash.com/photos/_lbW_JZwUCM",
-      "scores": [
+      "image": "https://unsplash.com/photos/_lbW_JZwUCM",
+      "responses": [
           4, 
           3, 
           2, 
@@ -82,8 +82,8 @@ var friends = [
     },
     {
       "name": "Jordan",
-      "photo": "https://unsplash.com/photos/ySTdW42Y7og",
-      "scores": [
+      "image": "https://unsplash.com/photos/ySTdW42Y7og",
+      "responses": [
           3, 
           2, 
           4, 
@@ -98,8 +98,8 @@ var friends = [
     },
     {
       "name": "Joren",
-      "photo": "https://unsplash.com/photos/5FlYmHYLf_8",
-      "scores": [
+      "image": "https://unsplash.com/photos/5FlYmHYLf_8",
+      "responses": [
           2, 
           4, 
           3, 
