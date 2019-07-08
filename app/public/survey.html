@@ -228,13 +228,13 @@
             newFriend = {
                 name: nameVal,
                 photo: photoVal,
-                responses: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
+                scores: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
                 total: q1Val + q2Val + q3Val + q4Val + q5Val + q6Val + q7Val + q8Val + q9Val + q10Val
             };
             // Set local variables
             var modalTitle = $('.modal-title');
             var modalBody = $('.modal-body');
-            var modal = $('#results-modal');
+            var modal = $('.modal fade');
             var apiFriendsRoute = '/api/friends'; 
 
             if (formIsValid()) {
@@ -269,7 +269,7 @@
             var minName;
             var minPhoto;
             data.forEach(function(friend) {
-                var localDiff = Math.abs(newFriend.total - friend.total);
+                var localDiff = Math.abs(newFriend.total - friends.total);
                 if (localDiff < difference) {
                     difference = localDiff;
                     minName = friend.name;
