@@ -205,66 +205,82 @@
         </div>
         <!-- End of Modal -->
 
-
         <script type="text/javascript">
-            // CSS for user selections
+        // Global variables
+        var nameVal, photoVal, q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val, newFriend;
 
-            // Capture user input selected values
-            $("#submit").on("click", function(event) {
-                event.preventDefault();
+        // Capture user input selected values
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
+            // Set global variable values
+            nameVal = $('#name').val();
+            photoVal = $('#photo').val();
+            q1Val = parseInt($('#q1').val());
+            q2Val = parseInt($('#q2').val());
+            q3Val = parseInt($('#q3').val());
+            q4Val = parseInt($('#q4').val());
+            q5Val = parseInt($('#q5').val());
+            q6Val = parseInt($('#q6').val());
+            q7Val = parseInt($('#q7').val());
+            q8Val = parseInt($('#q8').val());
+            q9Val = parseInt($('#q9').val());
+            q10Val = parseInt($('#q10').val());
+            newFriend = {
+                name: nameVal,
+                photo: photoVal,
+                responses: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
+                total: q1Val + q2Val + q3Val + q4Val + q5Val + q6Val + q7Val + q8Val + q9Val + q10Val
+            };
+            // Set local variables
+            var modalTitle = $('.modal-title');
+            var modalBody = $('.modal-body');
+            var modal = $('#results-modal');
+            var apiFriendsRoute = '/api/friends'; 
 
-                // Validate that form and all questions have been answered
-                function validateSurvey() {
-                    var isValid = true;
-                    $(".form-control").each(function() {
-                        if ($(this).val() === "") {
-                            isValid = false;
-                        }
-                    });
-                    $(".chosen-select").each(function() {
-                        if ($(this).val() === "") {
-                            isValid = false;
-                        }
-                    });
-                    return isValid;
-                }
-                
-                // If all inputs have answers
-                if (validateSurvey()) {        
-                // Create an object with the user input data
-                var newFriend = {
-                    name: $("#name").val().trim(),
-                    photo: $("#photo").val().trim(),
-                    scores: [
-                        $("#q1").val().trim(),
-                        $("#q2").val().trim(),
-                        $("#q3").val().trim(),
-                        $("#q4").val().trim(),
-                        $("#q5").val().trim(),
-                        $("#q6").val().trim(),
-                        $("#q7").val().trim(),
-                        $("#q8").val().trim(),
-                        $("#q9").val().trim(),
-                        $("#q10").val().trim(),
-                    ]
-                };
+            if (formIsValid()) {
+                $.get(apiFriendsRoute, function(data) {
+                    var match = makeMatch(data);
+                    if (match.name !== undefined) {
+                        modalTitle.text('You have a friend match!');
+                        modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
+                    } else {
+                        modalTitle.text('We couldn\'t find a match);
+                        modalBody.text('Sorry, there are too few friends to match you with.');
+                    }
+                }).then(function() {
+                    modal.show();
+                    $('.form')[0].reset();
+                    $.post(apiFriendsRoute, newFriend);
+                });
+            } else {
+                modalTitle.text('Oops!');
+                modalBody.text('Please enter an answer for each of the questions before submitting.');
+                modal.show();
+            }
+        });
 
-                // AJAX post user input data to friends api
-                $.post("/api/friends", newFriend)
-                    .then(function(data) {
-                    
-                    // Match user inputs and display best match name and photo
-                    $("#match-name").text(data.name);
-                    $("match-img").attr("src", data.photo);
+        function formIsValid() {
+            return (nameVal !== '' && photoVal !== '' && !isNaN(q1Val) && !isNaN(q2Val) && !isNaN(q3Val) && !isNaN(q4Val) &&
+                !isNaN(q5Val) && !isNaN(q6Val) && !isNaN(q7Val) && !isNaN(q8Val) && !isNaN(q9Val) && !isNaN(q10Val));
+        }
 
-                    // Invoke the modal to display best match results
-                    $("#results-modal").modal("toggle");
-                    });
-                } else {
-                    alert("Please complete all the fields and try submitting again.");
+        function makeMatch(data) {
+            var difference = 50;
+            var minName;
+            var minPhoto;
+            data.forEach(function(friend) {
+                var localDiff = Math.abs(newFriend.total - friend.total);
+                if (localDiff < difference) {
+                    difference = localDiff;
+                    minName = friend.name;
+                    minPhoto = friend.photo;
                 }
             });
-        </script>        
-
+        return {
+            name: minName,
+            photo: minPhoto
+        };
+        }
+        </script>
     </body>
 </html>
