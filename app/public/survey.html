@@ -224,10 +224,10 @@
                 $.get(apiFriendsRoute, function(data) {
                     var match = makeMatch(data);
                     if (match.name !== undefined) {
-                        modalTitle.text('You have a match!');
-                        modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '">');
+                        modalTitle.text('You have a friend match!');
+                        modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '">');
                     } else {
-                        modalTitle.text('Too few friends');
+                        modalTitle.text('We couldn\t find a match');
                         modalBody.text('Sorry, there are too few friends to match you with.');
                     }
                 }).then(function() {
