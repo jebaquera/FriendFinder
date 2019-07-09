@@ -308,7 +308,7 @@
         });
 
         function formIsValid() {
-            return (nameVal !== '' && photoVal !== '' && !isNaN(q1Val) && !isNaN(q2Val) && !isNaN(q3Val) && !isNaN(q4Val) &&
+            return (nameVal !== '' && imageVal !== '' && !isNaN(q1Val) && !isNaN(q2Val) && !isNaN(q3Val) && !isNaN(q4Val) &&
                 !isNaN(q5Val) && !isNaN(q6Val) && !isNaN(q7Val) && !isNaN(q8Val) && !isNaN(q9Val) && !isNaN(q10Val));
         }
 
@@ -321,12 +321,12 @@
                 if (localDiff < difference) {
                     difference = localDiff;
                     minName = person.name;
-                    minPhoto = person.image;
+                    minImage = person.image;
                 }
             });
             return {
                 name: minName,
-                photo: minImage
+                image: minImage
             };
         }
         </script>
