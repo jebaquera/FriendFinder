@@ -251,16 +251,13 @@
                 </div>
             </div>
         </div>
-        <!-- End of Modal -->
-
         <script type="text/javascript">
-        // Global variables
+        // declare global variables
         var nameVal, imageVal, q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val, newPerson;
-
-        // Capture user input selected values
-        $("#submit").on("click", function(event) {
+    
+        $('#submit').on('click', function(event) {
             event.preventDefault();
-            // Set global variable values
+            // set global variable values for multiple uses in this and other functions
             nameVal = $('#name').val();
             imageVal = $('#image').val();
             q1Val = parseInt($('#q1').val());
@@ -279,39 +276,39 @@
                 responses: [q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val, q8Val, q9Val, q10Val],
                 total: q1Val + q2Val + q3Val + q4Val + q5Val + q6Val + q7Val + q8Val + q9Val + q10Val
             };
-            // Set local variables
+            // declare and set local variables
             var modalTitle = $('.modal-title');
             var modalBody = $('.modal-body');
             var modal = $('#modal');
-            var apiFriendsRoute = '/api/friends'; 
-
+            var apiFriendsRoute = '/api/friends';
+    
             if (formIsValid()) {
                 $.get(apiFriendsRoute, function(data) {
                     var match = makeMatch(data);
                     if (match.name !== undefined) {
-                        modalTitle.text('You have a friend match!');
-                        modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="200px">');
+                        modalTitle.text('You have a match!');
+                        modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
                     } else {
-                        modalTitle.text('We couldn\'t find a match');
+                        modalTitle.text('Too few friends');
                         modalBody.text('Sorry, there are too few friends to match you with.');
-                    }   
+                    }
                 }).then(function() {
                     modal.show();
                     $('.form')[0].reset();
-                    $.post(apiFriendsRoute, newPerson);                        
+                    $.post(apiFriendsRoute, newPerson);
                 });
             } else {
-                modalTitle.text('Oops!');
-                modalBody.text('Please enter an answer for each of the questions before submitting.');
+                modalTitle.text('Error');
+                modalBody.text('Please make sure all questions have been filled in.');
                 modal.show();
             }
         });
-
+    
         function formIsValid() {
             return (nameVal !== '' && imageVal !== '' && !isNaN(q1Val) && !isNaN(q2Val) && !isNaN(q3Val) && !isNaN(q4Val) &&
                 !isNaN(q5Val) && !isNaN(q6Val) && !isNaN(q7Val) && !isNaN(q8Val) && !isNaN(q9Val) && !isNaN(q10Val));
         }
-
+    
         function makeMatch(data) {
             var difference = 50;
             var minName;
@@ -331,4 +328,6 @@
         }
         </script>
     </body>
-</html>
+    
+    </html>
+    
