@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>FF - Survey</title>
+        <title>FF-Survey</title>
         <!-- Latest compiled and minified CSS & JS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
         <script src="https://code.jquery.com/jquery.js"></script>
@@ -16,19 +16,45 @@
             background-color: white;
             padding: 0% 20% 0% 20%;
         }
-
+        
         h1 {
-            font-size: 65px;
-            color: rgb(77, 108, 15);
-        } 
-        h2 {
-            font-size: 38px;
-            color: rgb(77, 108, 15);
+            font-size: 64px;
+            color: white;
         }
 
+        h2 {
+            font-size: 34px;
+            color: white;
+        }
+        
         .jumbotron {
-            background-color: aliceblue;
+            background-color: #ee8d4c;
+            color: white;
             margin-top: 30px;
+        }
+        
+        .form {
+            color: white;
+        }
+
+        .form-group {
+            color: white;
+        }
+
+        a {
+            color: orange;
+        }
+        
+        a:active {
+            color: darkslategray;
+        }
+        
+        a:visited {
+            color:slategray;
+        }
+        
+        a:hover {
+            color: orangered;
         }
         </style>
     </head>
@@ -36,7 +62,7 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h1><i class="fas fa-user-friends" aria-hidden="true"></i> <strong> Friend Finder</strong></h1>
+                <h1><i class="fas fa-atlas" aria-hidden="true"></i> <strong> Friend Finder</strong></h1>
                 <hr />
                
                 <h2><strong>Survey Questions</strong></h2>
@@ -55,7 +81,7 @@
                     </div>
                     <br />
                     <div class="form-group">   
-                        <h5><strong>Question 1</strong></h5>
+                        <h5>Question 1</h5>
                         <label for="q1" class="lead">You prefer to swim in a pool rather than in Barton Springs.</label>
                         <br />
                         <select id="q1" class="chosen-select" required>
@@ -69,7 +95,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 2</strong></h5>
+                        <h5>Question 2</h5>
                         <label for="q2" class="lead">Generally speaking, you are comfortable meeting new people.</label>
                         <br />
                         <select id="q2" class="chosen-select" required>
@@ -83,7 +109,7 @@
                     </div>
                     <br />
                     <div class="form-group">    
-                        <h5><strong>Question 3</strong></h5>
+                        <h5>Question 3</h5>
                         <label for="q3" class="lead">You always look for the best deal when you shop.</label>
                         <br />
                         <select id="q3" class="chosen-select" required>
@@ -97,7 +123,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 4</strong></h5>
+                        <h5>Question 4</h5>
                         <label for="q4" class="lead">You are willing to try something you have never done before.</label>
                         <br />
                         <select id="q4" class="chosen-select" required>
@@ -111,7 +137,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 5</strong></h5>
+                        <h5>Question 5</h5>
                         <label for="q5" class="lead">You enjoy the company of pets.</label>
                         <br />
                         <select id="q5" class="chosen-select" required>
@@ -125,7 +151,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 6</strong></h5>
+                        <h5>Question 6</h5>
                         <label for="q6" class="lead">You would very much rather interview Madonna than Mariah Carey.</label>
                         <br />
                         <select id="q6" class="chosen-select" required>
@@ -139,7 +165,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 7</strong></h5>
+                        <h5>Question 7</h5>
                         <label for="q7" class="lead">People tell you that you are a good listener.</label>
                         <br />
                         <select id="q7" class="chosen-select" required>
@@ -153,7 +179,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 8</strong></h5>
+                        <h5>Question 8</h5>
                         <label for="q8" class="lead">You like to listen to your music on vinyl records.</label>
                         <br />
                         <select id="q8" class="chosen-select" required>
@@ -167,7 +193,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 9</strong></h5>
+                        <h5>Question 9</h5>
                         <label for="q9" class="lead">When you realize you have made a mistake, you are quick to apologize.</label>
                         <br />
                         <select id="q9" class="chosen-select" required>
@@ -181,7 +207,7 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <h5><strong>Question 10</strong></h5>
+                        <h5>Question 10</h5>
                         <label for="q10" class="lead">You feel more energetic after spending time with a group of friends.</label>
                             <br />
                         <select id="q10" class="chosen-select" required>
@@ -197,7 +223,7 @@
                     <br />
                     <!-- Submit button -->
                     <div class="text-left">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
                     </div>
                 </form>                
             </div>
@@ -205,7 +231,7 @@
             <!-- Footer links -->
             <footer class="footer">
                 <div>
-                    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder">GitHub Repo</a></p> <!-- NEED TO ADD CORRECT LINK INFO HERE -->
+                    <p><a href="/api/friends"target='_blank'>API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder" target='_blank'>GitHub Repo</a></p>
                 </div>
             </footer>
         </div>
@@ -260,21 +286,20 @@
             var apiFriendsRoute = '/api/friends'; 
 
             if (formIsValid()) {
-                // $.get(apiFriendsRoute, function(data) {
-                    
-                // }).then(function() {
-                    // $('.form')[0].reset();
-                    $.post(apiFriendsRoute, newPerson);
-                        var match = makeMatch(data);
-                        if (match.name !== undefined) {
-                            modalTitle.text('You have a friend match!');
-                            modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="45">');
-                        } else {
-                            modalTitle.text('We couldn\'t find a match');
-                            modalBody.text('Sorry, there are too few friends to match you with.');
-                        }
+                $.get(apiFriendsRoute, function(data) {
+                    var match = makeMatch(data);
+                    if (match.name !== undefined) {
+                        modalTitle.text('You have a friend match!');
+                        modalBody.html('<p class="strong">Based on your responses, you are most compatible with:</p><p>' + match.name + '</p><img src="' + match.image + '" height="200px">');
+                    } else {
+                        modalTitle.text('We couldn\'t find a match');
+                        modalBody.text('Sorry, there are too few friends to match you with.');
+                    }   
+                }).then(function() {
                     modal.show();
-                // });
+                    $('.form')[0].reset();
+                    $.post(apiFriendsRoute, newPerson);                        
+                });
             } else {
                 modalTitle.text('Oops!');
                 modalBody.text('Please enter an answer for each of the questions before submitting.');
