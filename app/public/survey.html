@@ -4,18 +4,18 @@
         <meta charset="UTF-8">
         <title>FF-Survey</title>
         <!-- Latest compiled and minified CSS & JS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
         <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
         <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/84e2c4562c.js"></script>
+        <!-- <script src="https://kit.fontawesome.com/84e2c4562c.js"></script> -->
         <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
         <!-- CSS -->
-        <style>
+        <!-- <style>
         body {
             background-color: white;
             padding: 0% 20% 0% 20%;
@@ -60,185 +60,153 @@
         a:hover {
             color: orangered;
         }
-        </style>
+        </style> -->
     </head>
 
     <body>
         <div class="container">
-            <div class="jumbotron">
-                <h1><i class="fas fa-atlas" aria-hidden="true"></i> <strong> Friend Finder</strong></h1>
-                <hr />
-               
-                <h2><strong>Survey Questions</strong></h2>
-                <h3>Rate how much you agree with the following statements.</h3>
-                <br />
-                <h4><strong>About You</strong></h4>
-
-                <form class="form">
-                    <div class="form-group">
-                        <label for="name"><h5><strong>Name</strong></h5></label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="form-group">    
-                        <label for="image"><h5><strong>Link to Photo Image</strong></h5></label>
-                        <input type="text" class="form-control" id="image" required>
-                    </div>
-                    <br />
-                    <div class="form-group">   
-                        <h5>Question 1</h5>
-                        <label for="q1" class="lead">You prefer to swim in a pool rather than in Barton Springs.</label>
-                        <br />
-                        <select id="q1" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 2</h5>
-                        <label for="q2" class="lead">Generally speaking, you are comfortable meeting new people.</label>
-                        <br />
-                        <select id="q2" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">    
-                        <h5>Question 3</h5>
-                        <label for="q3" class="lead">You always look for the best deal when you shop.</label>
-                        <br />
-                        <select id="q3" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 4</h5>
-                        <label for="q4" class="lead">You are willing to try something you have never done before.</label>
-                        <br />
-                        <select id="q4" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 5</h5>
-                        <label for="q5" class="lead">You enjoy the company of pets.</label>
-                        <br />
-                        <select id="q5" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 6</h5>
-                        <label for="q6" class="lead">You would very much rather interview Madonna than Mariah Carey.</label>
-                        <br />
-                        <select id="q6" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 7</h5>
-                        <label for="q7" class="lead">People tell you that you are a good listener.</label>
-                        <br />
-                        <select id="q7" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 8</h5>
-                        <label for="q8" class="lead">You like to listen to your music on vinyl records.</label>
-                        <br />
-                        <select id="q8" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 9</h5>
-                        <label for="q9" class="lead">When you realize you have made a mistake, you are quick to apologize.</label>
-                        <br />
-                        <select id="q9" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h5>Question 10</h5>
-                        <label for="q10" class="lead">You feel more energetic after spending time with a group of friends.</label>
-                            <br />
-                        <select id="q10" class="chosen-select" required>
-                            <option value=""></option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3 (Neither Disagree nor Agree)</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                    <br />
-                    <br />
-                    <!-- Submit button -->
-                    <div class="text-left">
-                        <button type="submit" class="btn btn-secondary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
-                    </div>
-                </form>                
-            </div>
-
-            <!-- Footer links -->
-            <footer class="footer">
-                <div>
-                    <p><a href="/api/friends"target='_blank'>API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder" target='_blank'>GitHub Repo</a></p>
+            <h1>Survey</h1>
+            <hr>
+            <form class="form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" required>
                 </div>
-            </footer>
-        </div>
+                <div class="form-group">
+                    <label for="image">Image URL</label>
+                    <input type="text" class="form-control" id="image" required>
+                </div>
+                <hr>
+                <h2>Select how much you agree with the following statements.</h2>
+            <div class="form-group">
+                <label for="q1" class="lead">You prefer to swim in a pool rather than in Barton Springs.</label>
+                <select id="q1" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q2" class="lead">Generally speaking, you are comfortable meeting new people.</label>
+                <select id="q2" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q3" class="lead">You always look for the best deal when you shop.</label>
+                <select id="q3" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q4" class="lead">You are willing to try something you have never done before.</label>
+                <select id="q4" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q5" class="lead">You enjoy the company of pets.</label>
+                <select id="q5" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q6" class="lead">You would very much rather interview Madonna than Mariah Carey.</label>
+                <select id="q6" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q7" class="lead">People tell you that you are a good listener.</label>
+                <select id="q7" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q8" class="lead">You like to listen to your music on vinyl records.</label>
+                <select id="q8" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q9" class="lead">When you realize you have made a mistake, you are quick to apologize.</label>
+                <select id="q9" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="q10" class="lead">You feel more energetic after spending time with a group of friends.</label>
+                <select id="q10" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <button type="button" id="submit" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal"><i class="fa fa-check-square" aria-hidden="true"></i> Submit</button>
+        </form>
+        <br />
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends" target='_blank'>API Friends List</a> | <a href="https://github.com/jebaquera/FriendFinder" target='_blank'>GitHub</a></p>
+            </div>
+        </footer>
+    </div>
 
         <!-- Modal -->
         <div class="modal fade" id="modal" role="dialog">
