@@ -259,7 +259,7 @@
                     var match = makeMatch(data);
                     if (match.name !== undefined) {
                         modalTitle.text('You have a match!');
-                        modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src=' + match.image + ' width="20%" height="20%">');
+                        modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src=' + match.image + '>');
                     } else {
                         modalTitle.text('Too few friends');
                         modalBody.text('Sorry, there are too few friends to match you with.');
