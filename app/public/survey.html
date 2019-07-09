@@ -15,7 +15,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
         <!-- CSS -->
-        <!-- <style>
+        <style>
         body {
             background-color: white;
             padding: 0% 20% 0% 20%;
@@ -60,7 +60,7 @@
         a:hover {
             color: orangered;
         }
-        </style> -->
+        </style>
     </head>
 
     <body>
@@ -259,7 +259,7 @@
                     var match = makeMatch(data);
                     if (match.name !== undefined) {
                         modalTitle.text('You have a match!');
-                        modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src=' + match.image + ' height="45px">');
+                        modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src=' + match.image + ' width="20%" height="20%">');
                     } else {
                         modalTitle.text('Too few friends');
                         modalBody.text('Sorry, there are too few friends to match you with.');
